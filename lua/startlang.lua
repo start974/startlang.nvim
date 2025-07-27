@@ -5,8 +5,7 @@ function configure_conform()
 
   conform.formatters.startlang_format = {
     command = 'startlang',
-    args = { 'format', '$FILENAME' },
-    stdin = false,
+    args = { 'format', '$FILENAME', '--print' },
   }
 
   conform.formatters_by_ft.startlang = { 'startlang_format' }
