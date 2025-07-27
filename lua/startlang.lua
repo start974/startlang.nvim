@@ -1,17 +1,24 @@
 local M = {}
 
-function configure_formatter()
-  local ok, conform = pcall(require, 'conform')
-  if not ok then
-    return
-  end
-  conform.formatters.startlang {
+function configure_conform()
+  local conform = require('conform')
+
+  conform.formatters.startlang_format = {
     command = 'startlang',
-    arg = { 'format', '--print' },
+    args = { 'format', '$FILENAME' },
+    stdin = false,
   }
+
+  conform.formatters_by_ft.startlang = { 'startlang_format' }
 end
 
-function M.setup()
-  configure_formatter()
+function M.setup(opts)
+  opts = vim.tbl_deep_extend('force', {
+    conform = false,
+  }, opts or {})
+
+  if opts.conform then
+    configure_conform()
+  end
 end
 return M

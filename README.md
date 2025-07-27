@@ -15,9 +15,9 @@ return {
   dependencies = {
     'stevearc/conform.nvim', -- optional (to use formatter)
   },
-  opts = {},
+  opts = { conform = true },
 }
 ```
 
 ## Options
-No options yet.
+- `conform` (boolean): use conform.nvim for formatting, default: `false`
