@@ -1,5 +1,8 @@
 " Fichier de syntaxe pour Startlang
 
+" --- Comments ---
+syn region startlangComment start="(\*" end="\*)" keepend
+
 " --- Identifiers ---
 syn match startlangIdentifier "\v<[a-zA-Z_]\w*'*\>"
 
@@ -19,14 +22,22 @@ syn match startlangOperatorDot "\."
 
 " --- Keywords (commands) ---
 syn keyword startlangKeywordDef Definition Def
+
 syn keyword startlangKeywordType Type Ty
+
 syn keyword startlangKeywordEval Eval
 syn match startlangKeywordOpEval '\<\$>'
+
 syn keyword startlangKeywordTypeOf TypeOf
 syn match startlangKeywordOpTypeOf "\<\?:\>"
+
+syn keyword startlangKeywordHelp Help
+syn match startlangKeywordOpHelp "\<\?\>"
+
 syn keyword startlangKeywordFlag Set Unset
 
 " --- Highlight Links ---
+hi def link startlangComment Comment
 hi def link startlangIdentifier Identifier
 hi def link startlangNumberDec Number
 hi def link startlangNumberHex Number
@@ -41,6 +52,8 @@ hi def link startlangKeywordOpEval Keyword
 hi def link startlangKeywordFlag Keyword
 hi def link startlangKeywordTypeOf Keyword
 hi def link startlangKeywordOpTypeOf Keyword
+hi def link startlangKeywordHelp Keyword
+hi def link startlangKeywordOpHelp Keyword
 
 hi def link startlangOperatorDot Operator
 hi def link startlangOperatorEqDef Operator
