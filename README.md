@@ -1,14 +1,17 @@
 # startlang-nvim
+
 Nvim plugin for language [startlang](https://github.com/start974/start-lang)
 
 Included:
+
 - syntax
-- configure formmatter with [conform](https://github.com/stevearc/conform.nvim) *(optional)*
-    (formatter is name `starlang`)
+- configure formmatter with [conform](https://github.com/stevearc/conform.nvim) _(optional)_
+  (formatter is name `starlang`)
 
 ## Install
 
 ### [Lazy.nvim](https://github.com/folke/lazy.nvim)
+
 ```lua
 return {
   'start974/startlang.nvim',
@@ -20,4 +23,6 @@ return {
 ```
 
 ## Options
+
 - `conform` (boolean): use conform.nvim for formatting, default: `false`
+- `lsp` (boolean): enable lsp, default: `true`
