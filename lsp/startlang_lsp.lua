@@ -1,5 +1,5 @@
 return {
-  filetypes = "startlang",
+  filetypes = { 'startlang' },
   root_dir = vim.fn.getcwd(),
-  cmd = { "startlang", "lsp" },
+  cmd = { 'startlang', 'lsp' },
 }
